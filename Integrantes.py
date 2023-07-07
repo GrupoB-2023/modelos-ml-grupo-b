@@ -12,7 +12,7 @@ st.markdown(
     """
     # TEAM B - INTEGRANTES:
     
-    #Jimenez Castaneda, Luis Francisco - 15200213  
+    # Jimenez Castaneda, Luis Francisco - 15200213  
     # Del Aguila Febres Brayan - 17200270  
     # Cordova Sandoval Rafael - 17200268 
     # Caceres Estana Juan Alfonso - 19200288   
