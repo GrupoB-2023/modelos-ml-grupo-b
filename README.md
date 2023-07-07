@@ -1,11 +1,5 @@
 # modelos-ml-grupo-b
 Despliegue para el curso InteligenciaNegocios 2023-1
 
-# INTEGRANTES
-#Jimenez Castañeda, Luis Francisco - 15200213 
-#Del Aguila Febres Brayan - 17200270 
-#Cordova Sandoval Rafael - 17200268 
-#Cáceres Estaña Juan Alfonso - 19200288 
-#Ambrocio Milla Katherine Celine - 18200324 
-#Rios Sanchez Anthony Ulises - 19200099 
-#Hidalgo Díaz Sebastian Eduardo - 18200082
+![image](https://github.com/GrupoB-2023/modelos-ml-grupo-b/assets/138836791/c4cf17f5-8222-4a74-ae3e-a5200f92641a)
+
