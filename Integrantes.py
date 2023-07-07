@@ -10,8 +10,8 @@ st.sidebar.success("Seleccione un modelo del menu")
 
 st.markdown(
     """
-    # Grupo B - Integrantes:
-    |--|--|
+    # TEAM B - INTEGRANTES:
+    
     #Jimenez Castaneda, Luis Francisco - 15200213  
     # Del Aguila Febres Brayan - 17200270  
     # Cordova Sandoval Rafael - 17200268 
