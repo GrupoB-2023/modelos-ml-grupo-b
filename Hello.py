@@ -2,7 +2,6 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Tarea Semana 15",
-    page_icon="ðŸ‘‹",
 )
 
 st.write("# Despliegue web de modelos del Grupo B 2023-1")
@@ -20,7 +19,7 @@ st.markdown(
     | Caceres Estana Juan Alfonso - 19200288   |
     | Ambrocio Milla Katherine Celine - 18200324  |
     | Rios Sanchez Anthony Ulises - 19200099  |
-    | Hidalgo D¨ªaz Sebastian Eduardo - 18200082  |
+    | Hidalgo Diaz Sebastian Eduardo - 18200082  |
 
     ### Especificaciones:
     **Donde muestra las predicciones/los resultados:**
