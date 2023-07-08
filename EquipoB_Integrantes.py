@@ -1,6 +1,5 @@
 import streamlit as st
-#prueba
-#comentario2
+
 st.set_page_config(
     page_title="Trabajo Grupal Semana 14",
 )
