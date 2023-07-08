@@ -1,27 +1,35 @@
 import streamlit as st
 
+#Cargamos los Datos
+import yfinance as yf
+brk = yf.Ticker('MSFT')
+
 # Título de la aplicación
 st.title("MODELO LSTM")
 # Descripción del modelo LSTM
 st.markdown("""
-            Un modelo LSTM (Long Short-Term Memory) es un tipo de 
-            red neuronal recurrente (RNN) especializada en trabajar 
-            con datos secuenciales, como series de tiempo, texto y 
-            datos de secuencia en general. 
-            A diferencia de las RNN tradicionales, que pueden sufrir de desvanecimiento o 
-            explosión del gradiente en entrenamientos a largo plazo, 
-            las capas LSTM están diseñadas para abordar estos problemas 
-            y capturar dependencias a largo plazo en los datos de entrada.
+Haremos una LSTM muy simple con Keras para predecir el precio de las acciones de Microsoft Corporation
             """)
+# Opciones para el radio button
+opciones = ['Usar Todo el Registo', 'Seleccionar Rango de Fechas']
 
-# Apartado para enviar un dato
-from datetime import datetime
-start_date = datetime.strptime('2018-01-01', '%Y-%m-%d').date()
-end_date = datetime.strptime('2022-12-31', '%Y-%m-%d').date()
-st.write("Primero Seleccionalos el rango de fechas de los datos a usar")
-Finit = st.date_input("Ingrese una Fecha de Inicio:",value = start_date)
-Fend = st.date_input("Ingrese una Fecha de Final:",value = end_date)
+# Crear el radio button para seleccionar una opción
+opcion_seleccionada = st.radio('Selecciona una opción', opciones)
 
+# Verificar la opción seleccionada
+if opcion_seleccionada == 'Usar Todo el Registo':
+    dataset = brk.history(period="max", auto_adjust=True)
+    st.write("Datos Completos:")
+elif opcion_seleccionada == 'Seleccionar Rango de Fechas':
+    # Apartado para enviar un dato
+    from datetime import datetime
+    start_date = datetime.strptime('2018-01-01', '%Y-%m-%d').date()
+    end_date = datetime.strptime('2022-12-31', '%Y-%m-%d').date()
+    st.write("Primero Seleccionalos el rango de fechas de los datos a usar:")
+    Finit = st.date_input("Ingrese una Fecha de Inicio:",value = start_date)
+    Fend = st.date_input("Ingrese una Fecha de Final:",value = end_date)
+    dataset = brk.history(start=Finit, end=Fend, auto_adjust=True)
+    st.write("Datos en el rango seleccionado:")
 #Codigo 
 import numpy as np
 np.random.seed(4)
@@ -49,12 +57,7 @@ def graficar_predicciones(real, prediccion):
     plt.ylabel('Valor de la acción')
     plt.legend()
     plt.show()
-"""**Cargamos los Datos**"""
-
-import yfinance as yf
-
-brk = yf.Ticker('MSFT')
-dataset = brk.history(start=Finit, end=Fend, auto_adjust=True)
+# Mostrar Datos
 dataset
 dataset.describe()
 
