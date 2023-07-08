@@ -38,6 +38,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, Dropout
 from tensorflow.keras.optimizers import Adam
 import yfinance as yfgit
+
 # Retrieve the Bitcoin price data from Yahoo Finance
 i01_BTC_USD = yf.download('BTC-USD', start=start_date, end=end_date)
 # Remove the 'Volume' column
@@ -50,3 +51,39 @@ i01_BTC_USD.columns = ['BTC_' + column for column in i01_BTC_USD.columns]
 i01_BTC_USD.sample(2)
 
 i01_BTC_USD.shape
+
+# Retrieve the Bitcoin price data from Yahoo Finance
+i02_ETH_USD = yf.download('ETH-USD', start=start_date, end=end_date)
+# Remove the 'Volume' column
+i02_ETH_USD.drop('Volume', axis=1, inplace=True)
+
+# Add 'BTC_' prefix to column names
+i02_ETH_USD.columns = ['ETH_' + column for column in i02_ETH_USD.columns]
+
+# Se obtienen los datos de precios de Bitcoin de Yahoo Finance
+i02_ETH_USD.sample(2)
+
+i02_ETH_USD.shape
+
+# Concatenate the DataFrames
+df = pd.concat([i02_ETH_USD, i01_BTC_USD], axis=1)
+
+df.sample(2)
+
+# Retrieve the Bitcoin price data from Yahoo Finance
+i03_GLD = yf.download('GLD', start=start_date, end=end_date)
+# Remove the 'Volume' column
+i03_GLD.drop('Volume', axis=1, inplace=True)
+
+# Add 'BTC_' prefix to column names
+i03_GLD.columns = ['GLD_' + column for column in i03_GLD.columns]
+
+# Se obtienen los datos de precios de Bitcoin de Yahoo Finance
+i03_GLD.sample(2)
+
+i03_GLD.shape
+
+# Concatenate the DataFrames
+df02 = pd.concat([i03_GLD , df], axis=1)
+
+df02
