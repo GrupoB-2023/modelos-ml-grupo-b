@@ -23,7 +23,6 @@ style.use('ggplot')
 pd.set_option('display.max_columns', None)
 pd.set_option('display.float_format', lambda x: '%.3f' % x)
 
-!pip install yfinance
 
 import yfinance as yf
 # Dataset de Microsoft Corporation (MSFT)

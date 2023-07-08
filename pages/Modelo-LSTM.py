@@ -31,8 +31,6 @@ pd.set_option('display.float_format', lambda x: '%.3f' % x)
 
 """**Instalamos yfinance**"""
 
-!pip install yfinance
-
 """**Usamos una función para graficar**"""
 
 # Funciones auxiliares
