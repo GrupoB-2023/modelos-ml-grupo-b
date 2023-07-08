@@ -18,8 +18,8 @@ st.markdown("""
 # Apartado para enviar un dato
 start_date = '2018-01-01'  # Se establece la fecha de inicio para los datos de precios
 end_date = '2022-12-31'  # Se establece la fecha de fin para los datos de precios
-Finit = st.date_input("Ingrese una Fecha de Inicio:", value=start_date)
-Fend = st.date_input("Ingrese una Fecha de Final:", value= end_date)
+Finit = st.date_input("Ingrese una Fecha de Inicio:")
+Fend = st.date_input("Ingrese una Fecha de Final:")
 enviar = st.button("Enviar")
 
 # Verificar si se ha enviado el dato
@@ -30,11 +30,3 @@ if enviar:
         st.write("Por favor, ingrese una fecha en ambos campos.")
 
 #Codigo Parte 1
-import matplotlib.pyplot as plt  # Importación de la biblioteca matplotlib.pyplot para graficar datos
-import pandas as pd  # Importación de la biblioteca pandas para manipulación de datos en forma de DataFrame
-import numpy as np  # Importación de la biblioteca numpy para operaciones numéricas
-from sklearn.preprocessing import MinMaxScaler
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense, Dropout
-from tensorflow.keras.optimizers import Adam
-import yfinance as yfgit
