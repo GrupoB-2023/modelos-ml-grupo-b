@@ -41,6 +41,10 @@ for symbol in symbols:
 
 df = pd.concat(data, axis=1)
 
+# Mostrar DataFrame después de la concatenación
+st.write("DataFrame después de la concatenación:")
+st.write(df)  # Agrega esta línea para mostrar el DataFrame
+
 # Calcular los retornos diarios de los precios de cierre
 returns_cols = [col for col in df.columns if col.startswith("Close_")]
 df[returns_cols] = df[returns_cols].pct_change()
