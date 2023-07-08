@@ -14,13 +14,17 @@ st.markdown("""
             y capturar dependencias a largo plazo en los datos de entrada.
             """)
 # Apartado para enviar un dato
-Finit = st.text_input("Ingrese una Fecha de Incio:")
-Fend = st.text_input("Ingrese una Fecha de Final:")
+Finit = st.date_input("Ingrese una Fecha de Inicio:")
+Fend = st.date_input("Ingrese una Fecha de Final:")
 enviar = st.button("Enviar")
 
 # Verificar si se ha enviado el dato
 if enviar:
-    st.write("Dato enviado:", dato)
+    if Finit and Fend:
+        st.write("¡Confirmación enviada!")
+    else:
+        st.write("Por favor, ingrese una fecha en ambos campos.")
+
 #Codigo Parte 1
 import matplotlib.pyplot as plt  # Importación de la biblioteca matplotlib.pyplot para graficar datos
 import pandas as pd  # Importación de la biblioteca pandas para manipulación de datos en forma de DataFrame
