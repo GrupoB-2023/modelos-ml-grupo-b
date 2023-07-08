@@ -10,17 +10,17 @@ st.sidebar.success("Seleccione un modelo del menu")
 
 st.markdown(
     """
-    # TEAM B:
+    # TEAM B - INTEGRANTES:
     
-    ### Integrantes:
-    - Jimenez Castaneda, Luis Francisco - 15200213  
-    - Del Aguila Febres Brayan - 17200270  
-    - Cordova Sandoval Rafael - 17200268 
-    - Caceres Estana Juan Alfonso - 19200288   
-    - Ambrocio Milla Katherine Celine - 18200324  
-    - Rios Sanchez Anthony Ulises - 19200099  
-    - Hidalgo Diaz Sebastian Eduardo - 18200082  
-    
+    #Jimenez Castaneda, Luis Francisco - 15200213  
+    # Del Aguila Febres Brayan - 17200270  
+    # Cordova Sandoval Rafael - 17200268 
+    # Caceres Estana Juan Alfonso - 19200288   
+    # Ambrocio Milla Katherine Celine - 18200324  
+    # Rios Sanchez Anthony Ulises - 19200099  
+    # Hidalgo Diaz Sebastian Eduardo - 18200082  
+
+    ### Especificaciones:
     **Donde muestra las predicciones/los resultados:**
     - Graficamente. 
     - Numericamente los valores de las predicciones (print de dataframe con la prediccion o clasificacion).
