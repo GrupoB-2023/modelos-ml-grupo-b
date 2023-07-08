@@ -21,11 +21,29 @@ st.write(
 
 ticker1 = st.text_input('Etiqueta de cotización', 'INTC')
 st.write('La etiqueta de cotización actual es', ticker1)
-
 intc = yf.Ticker(ticker1)
-hist = intc.history(period="max", auto_adjust=True)
-hist.head()
+# Opciones para el radio button
+opciones = ['Usar Todo el Registo', 'Seleccionar Rango de Fechas']
 
+# Crear el radio button para seleccionar una opción
+opcion_seleccionada = st.radio('Selecciona una opción', opciones)
+
+# Verificar la opción seleccionada
+if opcion_seleccionada == 'Usar Todo el Registo':
+    hist = intc.history(period="max", auto_adjust=True)
+    st.write("Datos Completos:")
+elif opcion_seleccionada == 'Seleccionar Rango de Fechas':
+    # Apartado para enviar un dato
+    from datetime import datetime
+    start_date = datetime.strptime('2018-01-01', '%Y-%m-%d').date()
+    end_date = datetime.strptime('2022-12-31', '%Y-%m-%d').date()
+    st.write("Primero Seleccionalos el rango de fechas de los datos a usar:")
+    Finit = st.date_input("Ingrese una Fecha de Inicio:",value = start_date)
+    Fend = st.date_input("Ingrese una Fecha de Final:",value = end_date)
+    hist = intc.history(start=Finit, end=Fend, auto_adjust=True)
+    st.write("Datos en el rango seleccionado:")
+    
+hist.head()
 df = hist
 
 df['Open-Close'] = df.Open - df.Close

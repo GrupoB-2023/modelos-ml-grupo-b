@@ -25,16 +25,34 @@ st.sidebar.header("SVC")
 st.write(
     """En esta página podrás ver cómo funciona el modelo SVC en la predicción del mercado de valores"""
 )
-
+st.write('Escriba una etiqueta de cotizacion')
 ticker = st.text_input('Etiqueta de cotización', 'NFLX')
 st.write('La etiqueta de cotización actual es', ticker)
 
 tic = yf.Ticker(ticker)
 tic
+# Opciones para el radio button
+opciones = ['Usar Todo el Registo', 'Seleccionar Rango de Fechas']
 
-hist = tic.history(period="max", auto_adjust=True)
+# Crear el radio button para seleccionar una opción
+opcion_seleccionada = st.radio('Selecciona una opción', opciones)
+
+# Verificar la opción seleccionada
+if opcion_seleccionada == 'Usar Todo el Registo':
+    hist = tic.history(period="max", auto_adjust=True)
+    st.write("Datos Completos:")
+elif opcion_seleccionada == 'Seleccionar Rango de Fechas':
+    # Apartado para enviar un dato
+    from datetime import datetime
+    start_date = datetime.strptime('2018-01-01', '%Y-%m-%d').date()
+    end_date = datetime.strptime('2022-12-31', '%Y-%m-%d').date()
+    st.write("Primero Seleccionalos el rango de fechas de los datos a usar:")
+    Finit = st.date_input("Ingrese una Fecha de Inicio:",value = start_date)
+    Fend = st.date_input("Ingrese una Fecha de Final:",value = end_date)
+    hist = tic.history(start=Finit, end=Fend, auto_adjust=True)
+    st.write("Datos en el rango seleccionado:")
+
 hist
-
 df = hist
 df.info()
 
